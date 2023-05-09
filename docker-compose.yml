@@ -4,6 +4,9 @@ services:
     build:
       context: Runtime/Jenkins
       dockerfile: Dockerfile
+      args:
+        UID: "${CURRENT_UID}"
+        GID: "${CURRENT_GID}"
     ports:
       - 8080:8080
     volumes:

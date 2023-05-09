@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  server:
+    build:
+      context: Runtime/Jenkins
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+

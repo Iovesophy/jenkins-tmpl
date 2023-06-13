@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  server:
+    build:
+      context: Runtime/Jenkins
+      dockerfile: Dockerfile
+      args:
+        UID: "${CURRENT_UID}"
+        GID: "${CURRENT_GID}"
+    ports:
+      - 8080:8080
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+
